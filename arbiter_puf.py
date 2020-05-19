@@ -1,4 +1,3 @@
-
 import random
 import numpy as np
 import math
@@ -13,7 +12,7 @@ class ArbiterPuf:
     def calculate_responses(self, number_of_challenges):
         list_of_responses = []
         for x in range(number_of_challenges):
-            challenge = [random.randint(0, 1) for _ in range(self.bits)]
+            challenge = [random.randint(0, 1) for i in range(self.number_of_bits)]  # generate a random bit vector
             list_of_responses.append(self.calculate_one_response(challenge))
         return list_of_responses
 
