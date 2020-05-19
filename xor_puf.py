@@ -19,17 +19,11 @@ class XorPuf:
         final_response = challenge.copy()
         list_of_responses_of_pufs = []
         for puf in self.list_of_pufs:
-            response =
-
-    def calculate_single_response(self, challenge):
-        final_response = challenge.copy()
-        list_of_responses_of_pufs = []
-        for puf in self.list_of_pufs:
             response = puf.calculate_single_response(challenge).pop()
             list_of_responses_of_pufs.append(response)
         result = 0
         for response in list_of_responses_of_pufs:
-            result ^= response
+            result ^= response  # result is xor of all the responses from each puf
         final_response.append(result)  # each response is a list of challenge bits, and one response bit
         return final_response
 
