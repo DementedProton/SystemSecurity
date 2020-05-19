@@ -19,7 +19,13 @@ class XorPuf:
         final_response = challenge.copy()
         list_of_responses_of_pufs = []
         for puf in self.list_of_pufs:
-            response = puf.calculate_one_response(challenge).pop()
+            response =
+
+    def calculate_single_response(self, challenge):
+        final_response = challenge.copy()
+        list_of_responses_of_pufs = []
+        for puf in self.list_of_pufs:
+            response = puf.calculate_single_response(challenge).pop()
             list_of_responses_of_pufs.append(response)
         result = 0
         for response in list_of_responses_of_pufs:
