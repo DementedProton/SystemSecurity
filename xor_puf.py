@@ -2,7 +2,7 @@ from arbiter_puf import ArbiterPuf
 import random
 
 
-class XorPUF:
+class XorPuf:
 
     def __init__(self, number_of_bits, number_of_pufs):
         self.number_of_bits = number_of_bits
